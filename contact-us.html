@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <link rel="shortcut icon" href="./icon/favicon.ico" type="image/x-icon">
+    <script async=“ture” src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=Pbr74hPgeMGrjyH3Bg2upyL2vrHnCgVj"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/contact-us.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <div class="nav_img">
+                <img src="./img/技工_Logo.png" alt="">
+            </div>
+            <div class="nav_text">
+                <ul class="menu">
+                    <li>
+                        <b><a href="./home.html">首页</a></b>
+                    </li>
+                    <li>
+                        <b><a href="./school_profile.html">学校概况</a></b>
+                    </li>
+                    <li>
+                        <b><a href="./press_releases.html">新闻公告</a></b>
+                    </li>
+                    <li>
+                        <b><a href="./enrollment.html">招生就业</a></b>
+                    </li>
+                    <li> 
+                        <b><a href="./teach.html">教学教研</a></b>
+                    </li>
+                    <li>
+                        <b><a href="./school-life.html">校园生活</a></b>
+                    </li>
+                    <li class="current">
+                        <b><a href="">联系我们</a></b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav>
+            <img class="nav_img" style="width: 100%;">
+        </nav>
+        <div class="content">
+            <div class="info">
+                <p>JIANGXI XINYU KANGZHAN TECHNICAL SCHOOL</p>
+                <p>江西新余康展技工学校</p>
+                <div class="address">
+                    <p>学校地址</p>
+                    <p>江西省新余市高新开发区东兴路1936号江西康展汽车科技学校</p>
+                </div>
+                <div class="telephone">
+                    <p>招生电话</p>
+                    <p>0790-6462779</p>
+                </div>
+                <div class="gongzhonghao">
+                    <img src="./img/gongzhonghao.jpg" alt="">
+                    <p>微信公众号</p>
+                </div>
+            </div>
+            <!--百度地图容器-->
+        <div id="map"></div>
+        </div>
+        <div class="footer">
+            <ul class="footer-content">
+                <li>
+                    <ul class="contact">
+                        <li>联系我们</li>
+                        <li>0790-6462696</li>
+                        <li>地址：江西省新余市高新开发区东兴路1936号</li>
+                        <li>电话：0790-6462696</li>
+                        <li><a href="#"><button>加入我们</button></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="school">
+                        <li>学校名称</li>
+                        <li>江西新余康展技工学校</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="wechat">
+                        <li>诚信为本&nbsp;精益求精</li>
+                        <li><img src="./img/weixin.png"></li>
+                        <li>官方微信</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">版权所有&copy;康展教育集团&nbsp;保留一切版权&nbsp;赣ICP备XXXXXX号</div>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(114.993784,27.844745),19);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"招生电话  0790-6462779",title:"江西新余康展技工学校",imageOffset: {width:-23,height:-21},position:{lat:27.844382,lng:114.993671}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+<script src="./js/baseurl.js"></script>
+<script src="./js/contact-us_ajax.js"></script>
+</html>

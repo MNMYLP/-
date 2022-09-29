@@ -1,0 +1,270 @@
+html{
+    overflow-x: hidden;
+}
+.box{
+    width: 10rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/*内容*/
+.content{
+    height: 5.7031rem;
+    background-color: #F7F7F7;
+    margin-top: 0;
+}
+
+.info{
+    width: 3.3552rem;
+    margin-left: .5104rem;
+    padding-top: 1.0156rem;
+    float: left;
+}
+.info > p:nth-child(1){
+    color: #9E1725;
+    font-size: .1042rem;
+    font-weight: bold;
+}
+.info > p:nth-child(2){
+    font-size: .25rem;
+    color: #9E1725;
+    font-weight: bold;
+    margin-top: .0938rem;
+    border-bottom: .0521rem solid #9E1725;
+    letter-spacing: .026rem;
+    padding-bottom: .1042rem;
+}
+.address{
+    background: url(../img/address.jpg) no-repeat 0rem -0.0208rem;
+}
+.address,.telephone{
+    margin-top: .3125rem;
+    padding-bottom: .1875rem;
+    border-bottom: .0052rem solid #C9C9C9;
+    text-indent: .4706rem;
+}
+.address p:nth-child(1),.telephone p:nth-child(1){
+    font-size: .125rem;
+    font-weight: bold;
+    margin-bottom: .0938rem;
+}
+.address p:nth-child(2),.telephone p:nth-child(2){
+    font-size: .1042rem;
+}
+.telephone{
+    margin-top: .2604rem;
+    background: url(../img/telephone.jpg) no-repeat 0rem -0.0208rem;
+}
+.gongzhonghao{
+    width: 1.0885rem;
+    margin-top: .2396rem;
+}
+.gongzhonghao p{
+    text-align: center;
+    margin-top: .0833rem;
+    font-size: .1042rem;
+}
+#map{
+    border: .0052rem solid #CECDCD;
+    width: 5.4583rem;
+    height: 3.7396rem;
+    float: right;
+    margin-right: .5052rem;
+    margin-top: 1.0052rem;
+}
+
+/*底部信息*/
+.footer {
+    width: 100%;
+    font-size: .0833rem;
+    height: 1.8958rem;
+    background-color: #434343;
+    color: #FAFAFA;
+}
+.footer-content{
+    list-style-type: none;
+}
+.footer-content > li{
+    float: left;
+    flex: 1;
+}
+.footer-content > li:nth-child(1){
+    margin-top: .3125rem;
+}
+.contact li:nth-child(1){
+    margin-bottom: .1146rem;
+}
+.contact li:nth-child(2){
+    font-size: .125rem;
+    margin-bottom: .1302rem;
+}
+.contact li:nth-child(3){
+    margin-bottom: .2865rem;
+}
+.contact li:nth-child(4){
+    margin-bottom: .2604rem;
+}
+.contact li:nth-child(5)  button{
+    width: .4948rem;
+    height: .1563rem;
+    background-color: #434343;
+    border: .0052rem solid white;
+    color: white;
+    border-radius: .026rem;
+}
+.footer-content > li:nth-child(2){
+    width: 1.7865rem;
+    height: 1.0417rem;
+    border-left: .0052rem solid white;
+    border-right: .0052rem solid white;
+    margin-top: .4271rem;
+    text-align: center;
+}
+.footer-content > li:nth-child(3){
+    margin-top: .3125rem;
+}
+.school li{
+    margin-top: .2083rem;
+}
+.wechat li:nth-child(1){
+    text-indent: .0781rem;
+    margin-bottom: .1823rem;
+}
+.wechat li:nth-child(2) img{
+    width: .6302rem;
+    border: .026rem solid white;
+    border-radius: .0521rem;
+}
+.wechat li:nth-child(3){
+    margin-top: .1042rem;
+    text-align: center;
+}
+.bottom{
+    height: .2604rem;
+    font-size: .0833rem;
+    text-align: center;
+    background-color: black;
+    color: #d2d0ce;
+    line-height: .2604rem;
+}
+ul {
+    list-style-type: none;
+}
+b{
+    font: inherit;
+}
+.page{
+    display: flex;
+    transform: translate(30%, -75%);
+}
+.page div{
+    width: .2604rem;
+    height: .2604rem;
+    line-height: .2604rem;
+    font-size: .0833rem;
+    text-align: center;
+}
+.page div:nth-child(1){
+    width: .4688rem;
+}
+.page div:nth-child(4){
+    width: .4688rem;
+}
+.page div:nth-child(2){
+    background-color: rgb(158, 23, 37);
+    color: #FAFAFA;
+}
+.page div img{
+    width: 100%;
+}
+.footer-content{
+    display: flex;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    left: .2906rem;
+}
+.wechat{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.nav{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+.nav .nav_img{
+    width: 2.4115rem;
+    padding-top: .0521rem;
+}
+.nav .nav_img img{
+    width: 100%;
+}
+.nav .nav_text{
+    padding-left: 1.0417rem;
+}
+.nav .nav_text .menu li b{
+    font-size: .1198rem;
+}
+.tab_outer {
+    margin: 0 auto;
+}
+
+.menu {
+    /*border: .0052rem solid red;*/
+    width: 100%;
+    height: .5729rem;
+    line-height: .5208rem;
+}
+
+.menu li {
+    display: inline-block;
+    font-size: .0938rem;
+    margin-left: .0729rem;
+    padding: .026rem .1042rem;
+
+}
+
+.menu li img {
+    width: 100%;
+}
+
+/* .menu a {
+    border-right: .0052rem solid red;
+    padding: .0573rem;
+} */
+
+
+
+.hide {
+    display: none;
+}
+
+.current b a{
+    color: red;
+}
+a {
+	text-decoration: none; /* 去除默认的下划线 */
+	outline: none;	/* 去除旧版浏览器的点击后的外虚线框 */
+	color: #000;	/* 去除默认的颜色和点击后变化的颜色 */ 
+}
+.gongzhonghao>img {
+    width: 100%;
+}
+.wechat-info{
+    position: absolute;
+    right: 2rem;
+    top: .2604rem;
+}
+.footer .school-info{
+    border-left: .0052rem solid;
+    border-right: .0052rem solid;
+    width: 1.3021rem;
+    height: .9375rem;
+    position: absolute;
+    left: 4.2448rem;
+    margin-top: .3646rem;
+    text-align: center;
+}
